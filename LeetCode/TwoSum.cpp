@@ -7,15 +7,18 @@ public:
             
             for (int j = 0; j < nums.size(); j++) {
                 
-                if ((nums[i] + nums[j]) == target) {
+                if (i != j) {
+                    if ((nums[i] + nums[j]) == target) {
                     
                     final.push_back(i);
                     final.push_back(j);
                     return final;
+                    }
                 }
             }
         }
-
+        
+        
         return final;
         
     }
