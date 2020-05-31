@@ -15,9 +15,8 @@ public:
                 if (i != j) {
 
                     // Check if they add up to the target
-                    // If they do, add to the final vectore and return
+                    // If they do, add to the final vector and return
                     if ((nums[i] + nums[j]) == target) {
-                    
                         final.push_back(i);
                         final.push_back(j);
                         return final;
