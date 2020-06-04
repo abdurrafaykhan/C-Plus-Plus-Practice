@@ -65,10 +65,7 @@ public:
                         cout << "in 4 case" << sum << endl;
                     }
                }
-                
-                
-                
-                
+               
                 cout << "after" << sum << endl;
                 // Recursively add sum to nodes children
                 return sum + sumEvenGrandparent(root->left) + sumEvenGrandparent(root->right);
@@ -78,36 +75,8 @@ public:
             else {
                 return sum + sumEvenGrandparent(root->left) + sumEvenGrandparent(root->right);
             }
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
-     
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         // Final return incase conditions do not work
         return 0;
-        
-        
-    
-        
-        
     }
 };
