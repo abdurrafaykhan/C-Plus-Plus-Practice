@@ -1,69 +1,60 @@
 class Solution {
 public:
+
     vector<vector<int>> groupThePeople(vector<int>& groupSizes) {
         
+        // Initialize vectors to be used in the sorting algorithm
         vector<vector<int>> final;
+        vector<vector<int>> sortedIndexes;
+        vector<int> sameSizes;
+        vector<int> toBeDivided;
+        vector<int> dividedGroups;
 
-        
-        
-        vector<int> temp;
-        
-        for (int i = 1; i <= 500; i++) {
-            temp.clear();
-            for (int j = 0; j < groupSizes.size(); j++) {
-                
-                if (groupSizes[j] == i) {
-                    temp.push_back(j);
-                }
-            }
-            final.push_back(temp);
-            
-            
-        }
-        
-        
-        
-        
-        
-        
-        
-        
+        // Initialized variables to be used in sorting algorithm
         int size = 0;
-        cout << final.size() << endl;
-        vector<vector<int>> newFinal;
-        temp.clear();
-        vector<int> workingcopy;
-        int tempsize = 0;
-        
-        
-        
-        for (int i = 0; i < final.size(); i++) {
-            
-           
-            
-            size = i+1;
-            
-            
-            workingcopy = final[i];
-            
-            if (workingcopy.size() != 0) {
-                temp.clear();
-                
-                for (int j = 0; j < workingcopy.size(); j++) {
-                    
-                    temp.push_back(workingcopy[j]);
-                    
-                    if (temp.size() == size) {
-                        newFinal.push_back(temp);
-                        temp.clear();
-                    }
-                    
-                    
+
+        // Goes through all possible group sizes
+        for (int i = 1; i <= 500; i++) {
+
+            // Clears the group after sorting each size #
+            sameSizes.clear();
+
+            // Goes through the groupSizes vector and sorts indexes belonging to corresponding group sizes
+            for (int j = 0; j < groupSizes.size(); j++) {
+                if (groupSizes[j] == i) {
+                    sameSizes.push_back(j);
                 }
-                
             }
+
+            // After each size # is complete, add to sorted vector
+            sortedIndexes.push_back(sameSizes);
+        }
+
+        // Goes through indexes that are sorted into groups based off of size
+        for (int i = 0; i < sortedIndexes.size(); i++) {
             
+            // Sets the size correctly to match the index and Sets current group to be divided
+            size = i+1; 
+            toBeDivided = sortedIndexes[i];
             
+            // Checks if there are indexes to be divided
+            if (toBeDivided.size() != 0) {
+
+                // Clears the group after max size has been reached
+                dividedGroups.clear();
+                
+                // Goes through the indexes needed to be sorted
+                for (int j = 0; j < toBeDivided.size(); j++) {
+                    
+                    dividedGroups.push_back(toBeDivided[j]);
+                    
+                    // When max size is reached, push back to final vector
+                    if (dividedGroups.size() == size) {
+                        final.push_back(dividedGroups);
+                        dividedGroups.clear();
+                    }
+                }
+            }
         }
 
         /*
@@ -111,7 +102,7 @@ public:
             
         }
         */
-        return newFinal;
+        return final;
         
     }
 };
