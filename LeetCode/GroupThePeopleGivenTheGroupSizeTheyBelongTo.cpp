@@ -57,52 +57,6 @@ public:
             }
         }
 
-        /*
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        vector<vector<int>> final;
-        vector<int> temp;
-        
-        for (int i = 1; i <= 500; i++) {
-            
-      
-            
-    
-            
-            if (groupSizes[i] == groupSizes[i+1]) {
-                cout << i << " gets pushed back" << endl;
-                temp.push_back(i);
-            }
-            
-            
-            else {
-                if (temp.size() == groupSizes[i]) {
-                    cout << "checked size, temp is " << temp.size() << endl;
-                    final.push_back(temp);
-                    temp.clear();
-                }
-                else {
-                    cout << i << " is last one to get pushed back" << endl;
-                    temp.push_back(i);
-                    final.push_back(temp);
-                    cout << "pushed back to final" << endl;
-                    temp.clear();
-                }
-            
-            }
-            
-            
-        }
-        */
-        return final;
-        
+        return final; 
     }
 };
