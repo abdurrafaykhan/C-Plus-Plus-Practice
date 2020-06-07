@@ -67,25 +67,10 @@ public:
                         count = count + (newGrid[i][j] - grid[i][j]);
                     }
                 }
-                cout << newGrid[i][j] << " ";
             }
-            cout << endl;
         }
         
-        
-        
-        
-        
-        /*
-        cout << "Following is verticalSkyline" << endl;
-        for (int i = 0; i < verticalSkyline.size(); i++) {
-            cout << verticalSkyline[i] << endl;
-        }
-        cout << "Following is horizontalSkyline" << endl;
-        for (int i = 0; i < horizontalSkyline.size(); i++) {
-            cout << horizontalSkyline[i] << endl;
-        }
-        */
+        // Returned total count
         return count;
         
     }
