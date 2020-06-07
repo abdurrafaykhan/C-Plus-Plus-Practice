@@ -50,21 +50,17 @@ public:
                 
                 // If the horizontal skyline is shorter at a location...
                 if (verticalSkyline[i] >= horizontalSkyline[j]) {
-                    newGrid[i][j] = horizontalSkyline[j];
-
                     // Counts height needed for old grid to match new grid
-                    if (newGrid[i][j] > grid[i][j]) {
-                        count = count + (newGrid[i][j] - grid[i][j]);
+                    if (horizontalSkyline[j] > grid[i][j]) {
+                        count = count + (horizontalSkyline[j] - grid[i][j]);
                     }
                 }
 
                 // If the horizontal skyline is shorter at a location...
                 else {
-                    newGrid[i][j] = verticalSkyline[i];
-
                     // Counts height needed for old grid to match new grid
-                    if (newGrid[i][j] > grid[i][j]) {
-                        count = count + (newGrid[i][j] - grid[i][j]);
+                    if (verticalSkyline[i] > grid[i][j]) {
+                        count = count + (verticalSkyline[i] - grid[i][j]);
                     }
                 }
             }
