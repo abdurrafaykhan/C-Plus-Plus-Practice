@@ -19,15 +19,12 @@ public:
             // Divides by 10 repeatedly to count digits
             while (currentNum != 0) {
                 currentNum = currentNum/10;
-                
                 currentDigits = currentDigits + 1;
             }
             
-            cout << currentDigits << endl;
 
             // If even digits, increase final count by 1
             if (currentDigits % 2 == 0 && nums[i] != 0) {
-                cout << currentNum << endl;
                 evenDigitsCount = evenDigitsCount + 1;
             }
             
@@ -35,9 +32,5 @@ public:
         
         // Return final count
         return evenDigitsCount;
-        
-        
-        
-        
     }
 };
