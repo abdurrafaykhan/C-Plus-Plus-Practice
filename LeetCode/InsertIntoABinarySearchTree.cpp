@@ -15,11 +15,13 @@ class Solution {
 public:
     TreeNode* insertIntoBST(TreeNode* root, int val) {
         
+        // If there is no element in the BST there, insert val
         if (root == nullptr) {
             TreeNode* insertion = new TreeNode(val);
             return insertion;
         }
         
+        // If val is less than root, iterate on left subtree, otherwise right subtree
         if (val < root->val) {
             root->left = insertIntoBST(root->left, val);
         }
@@ -27,6 +29,7 @@ public:
             root->right = insertIntoBST(root->right, val);
         }
         
+        // Return root
         return root;
     }
 };
