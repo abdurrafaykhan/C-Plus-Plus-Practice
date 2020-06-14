@@ -19,9 +19,16 @@ public:
         
         TreeNode* root = new TreeNode(preorder[0]);
         
+        cout << "Creates root with value of :" << preorder[0] << endl;
+        
+        
+        
         if (preorder.size() == 1) {
+            cout << "Size of one, so returning root" << endl;
             return root;
         }
+        
+        cout << "Index of next highest digit is 0" << endl;
         int index = 0;
         
         for (int i = 0; i < preorder.size(); i++) {
@@ -29,6 +36,19 @@ public:
                 index = i;
                 break;
             }
+        }
+        
+        cout << "Index of next highest digit is:" << index << endl;
+        
+        
+        if (index == 0) {
+            
+            cout << "Index remains 0, so all numbers are smaller than index of 0" << endl;
+            
+            preorder.erase(preorder.begin());
+            cout << "Erased first digit, passed in rest of array to left child of root" << endl;
+            root->left = bstFromPreorder(preorder);
+            return root;
         }
         
         vector<int> left;
@@ -48,8 +68,12 @@ public:
         cout << "Following is right array" << endl;
         for (int i = 0; i < right.size(); i++) {
         }
+        cout << endl;
+        cout << "Before going to left child" << endl;
         root->left = bstFromPreorder(left);
+        cout << "After coming from left child, Before going to right child" << endl;
         root->right = bstFromPreorder(right);
+        cout << "Returning root" << endl;
         return root;
        
         
