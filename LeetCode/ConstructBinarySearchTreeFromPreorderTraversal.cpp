@@ -42,7 +42,6 @@ public:
         // Then return root
         if (index == 0) {
             preorder.erase(preorder.begin());
-            cout << "Erased first digit, passed in rest of array to left child of root" << endl;
             root->left = bstFromPreorder(preorder);
             return root;
         }
