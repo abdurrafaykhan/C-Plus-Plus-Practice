@@ -14,20 +14,14 @@ public:
  
         // Reverses vector to get digits in order
         reverse(digits.begin(), digits.end());
-        
-        // Initializes index value used for storing the first 6
-        int index = 0;
-        
-        // Finds index of first occurence of 6 in the vector
+       
+        // Replaces first 6 with a 9 in the vector and leaves
         for (int i = 0; i < digits.size(); i++) {
             if (digits [i] == 6) {
-                index = i;
+                digits[i] = 9;
                 break;
             }
         }
-        
-        // Changes the first 6 to a 9
-        digits[index] = 9;
         
         // Initializes final number to be returned and highest placevalue for recreation of the num
         int final = 0;
